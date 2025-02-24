@@ -17,14 +17,24 @@ const int BUTTON_RED = 5;
 const int BUTTON_YELLOW = 4;
 
 
+// external buzzer
+const int buzzer = 2;
+
+//initialising reads
 int blueButton = 0;
 int greenButton = 0;
 int redButton = 0;
 int yellowButton = 0;
 
 
-void setup()
-{
+// buzzer frequencies
+const int RED_TONE = 310;
+const int BLUE_TONE = 209;
+const int GREEN_TONE = 415;
+const int YELLOW_TONE = 252;
+
+
+void setup(){
   //initialising output pins
   pinMode(LED_BLUE, OUTPUT);
   pinMode(LED_GREEN, OUTPUT);
@@ -37,12 +47,12 @@ void setup()
   pinMode(BUTTON_RED, INPUT);
   pinMode(BUTTON_YELLOW, INPUT);
   
-  
+  //initialise buzzer pin
+  pinMode(buzzer, OUTPUT);
   
 }
 
-void loop()
-{
+void loop(){
   blueButton = digitalRead(BUTTON_BLUE);
   greenButton = digitalRead(BUTTON_GREEN);
   redButton = digitalRead(BUTTON_RED);
@@ -52,6 +62,34 @@ void loop()
   digitalWrite(LED_GREEN,!(greenButton));
   digitalWrite(LED_RED,!(redButton));
   digitalWrite(LED_YELLOW,!(yellowButton));
+  
+  if (!blueButton){
+    tone(buzzer,BLUE_TONE,100);
+  }
+  else{
+    
+  }
+  
+  if (!redButton){
+    tone(buzzer,RED_TONE,100);
+  }
+  else{
+    
+  }
+  
+  if (!greenButton){
+    tone(buzzer,GREEN_TONE,100);
+  }
+  else{
+    
+  }
+  
+  if (!yellowButton){
+    tone(buzzer,YELLOW_TONE,100);
+  }
+  else{
+    
+  }
   
   
 }
