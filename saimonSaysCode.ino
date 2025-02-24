@@ -50,6 +50,10 @@ void setup(){
   //initialise buzzer pin
   pinMode(buzzer, OUTPUT);
   
+  
+ //initialising serial port;
+  Serial.begin(115200);
+  
 }
 
 void loop(){
@@ -65,6 +69,7 @@ void loop(){
   
   if (!blueButton){
     tone(buzzer,BLUE_TONE,100);
+    Serial.write("\n\r Blue button pressed");
   }
   else{
     
@@ -72,6 +77,7 @@ void loop(){
   
   if (!redButton){
     tone(buzzer,RED_TONE,100);
+    Serial.write("\n\r Red button pressed");
   }
   else{
     
@@ -79,6 +85,7 @@ void loop(){
   
   if (!greenButton){
     tone(buzzer,GREEN_TONE,100);
+    Serial.write("\n\r green button pressed");
   }
   else{
     
@@ -86,6 +93,7 @@ void loop(){
   
   if (!yellowButton){
     tone(buzzer,YELLOW_TONE,100);
+    Serial.write("\n\r Yellow button pressed");
   }
   else{
     
